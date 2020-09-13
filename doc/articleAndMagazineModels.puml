@@ -1,0 +1,36 @@
+@startuml
+class Article{
+    id: number
+    page: number
+    title: string
+    attachments: Array
+    type: enum['memo', 'file']
+    comment: string
+}
+
+class Magazine{
+    id: number
+    name: string
+    issue: string
+    location: string
+}
+
+ Article "[0..*] article" -- "[1] magazine" Magazine: is written in >
+
+object article1{
+    id=1
+    page=10
+    title="guide des tailles d'été"
+    type:"file"
+    magazine
+}
+
+object magazine1{
+    id=1
+    name= 'rustica'
+    issue= '2588'
+    location ='bevenais;bureau;armoire1;etagere1;cartonRevue1'
+}
+
+article1 -- magazine1
+@enduml
