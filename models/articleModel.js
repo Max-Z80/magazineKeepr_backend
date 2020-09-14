@@ -1,23 +1,29 @@
 const mongoose = require("mongoose");
+const Schema = require("mongoose").Schema;
+const MagazineModel = require("./magazineModel");
 
 const articleSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: true
     },
     page: {
       type: Number,
-      required: true,
+      required: true
     },
     type: {
       type: String,
       enum: ["memo", "file"],
-      required: true,
+      required: true
     },
     comment: {
-      type: String,
+      type: String
     },
+    magazine: {
+      type: Schema.Types.ObjectId,
+      ref: MagazineModel
+    }
   },
   { timestamps: true }
 );
