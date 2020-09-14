@@ -21,7 +21,7 @@ before(function(done) {
           process.env.MONGO_URI = mongoUri;
 
           //initialize the server
-          global.gServer = require("../index.js");
+          global.gServer = require("../server.js");
         })
         .catch(e => {
           console.log("Could not start the server for tests.");
@@ -35,7 +35,7 @@ before(function(done) {
     }
   } else {
     console.log("using mongoDB running locally at %s", config.database.uri);
-    global.gServer = require("../index.js");
+    global.gServer = require("../server.js");
     global.gRequester = chai.request(global.gServer).keepOpen();
     setTimeout(function() {
       done();

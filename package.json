@@ -2,9 +2,9 @@
   "name": "magazinekeepr",
   "version": "1.0.0",
   "description": "nodejs backend connected to mongo database which enables finding articles from archived paper magazines",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "./node_modules/mocha/bin/mocha tests"
   },
   "author": "Maxime Chaillet",

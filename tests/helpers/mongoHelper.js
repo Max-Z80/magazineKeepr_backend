@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Magazine = require("../../models/magazineModel");
+const Magazine = require("../../app/models/magazineModel");
 
 /**
  * Drop the database
